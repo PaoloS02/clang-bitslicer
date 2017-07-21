@@ -1353,7 +1353,7 @@ BUILTIN(__builtin_nontemporal_store, "v.", "t")
 BUILTIN(__builtin_nontemporal_load, "v.", "t")
 
 // Bitwise access to bitsliced data builtins
-BUILTIN(__buitlin_bit, "Ui*", "n")
+BUILTIN(__builtin_i8_bit, "Uc*Uci", "")
 
 // Coroutine intrinsics.
 BUILTIN(__builtin_coro_resume, "vv*", "")
