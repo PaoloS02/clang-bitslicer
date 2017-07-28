@@ -1227,16 +1227,6 @@ RValue CodeGenFunction::EmitBuiltinExpr(const FunctionDecl *FD,
     return RValue::get(AI);
   }
   
-  case Builtin::BI__builtin_i8_bit: {
-  	//This builtin lets the user access an individual bit of a bitsliced value
-  	llvm::Value *Src0 = (*this).EmitScalarExpr(E->getArg(0));
-  	llvm::Value *Src1 = (*this).EmitScalarExpr(E->getArg(1));
-// 	llvm::Type *IntTy = llvm::IntegerType::getInt8Ty(
-// 							(cast<llvm::Instruction>(Src0))->getModule()->getContext());
-  	llvm::Function *F = (*this).CGM.getIntrinsic(Intrinsic::bitsliced_bit, llvm::PointerType::getUnqual(IntTy));
-  	return RValue::get((*this).Builder.CreateCall(F, { Src0, Src1 }));
-  }
-
   case Builtin::BIbzero:
   case Builtin::BI__builtin_bzero: {
     Address Dest = EmitPointerWithAlignment(E->getArg(0));
