@@ -1352,9 +1352,12 @@ BUILTIN(__builtin___get_unsafe_stack_ptr, "v*", "Fn")
 BUILTIN(__builtin_nontemporal_store, "v.", "t")
 BUILTIN(__builtin_nontemporal_load, "v.", "t")
 
-// Bitwise access to bitsliced data builtins
+// Bit-slicing builtins.
+// Bitwise access to bitsliced data.
 BUILTIN(__builtin_i8_bit, "UcUci", "")
-BUILTIN(__builtin_i32_bitslice, "Ui*Uc**i", "")
+// Actual bit-slicing and recomposition
+BUILTIN(__builtin_i32_bitslice, "Ui*Uc**", "")
+BUILTIN(__builtin_i32_unbitslice, "Uc**Ui*", "")
 
 // Coroutine intrinsics.
 BUILTIN(__builtin_coro_resume, "vv*", "")
