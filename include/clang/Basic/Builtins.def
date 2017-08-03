@@ -1356,8 +1356,8 @@ BUILTIN(__builtin_nontemporal_load, "v.", "t")
 // Bitwise access to bitsliced data.
 BUILTIN(__builtin_i8_bit, "UcUci", "")
 // Actual bit-slicing and recomposition
-BUILTIN(__builtin_i32_bitslice, "Ui*Uc*", "")
-BUILTIN(__builtin_i32_unbitslice, "Uc*Ui*", "")
+BUILTIN(__builtin_i32_bitslice, "vUc*Ui*", "")
+BUILTIN(__builtin_i32_unbitslice, "vUi*Uc*", "")
 
 // Coroutine intrinsics.
 BUILTIN(__builtin_coro_resume, "vv*", "")
