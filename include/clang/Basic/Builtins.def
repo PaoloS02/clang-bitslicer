@@ -1358,7 +1358,9 @@ BUILTIN(__builtin_i8_bit, "UcUci", "")
 // Actual bit-slicing and recomposition
 BUILTIN(__builtin_i32_bitslice, "vUc*Ui*", "")
 BUILTIN(__builtin_i32_unbitslice, "vUi*Uc*", "")
-
+// Macro orthogonal transformation of regions of code
+BUILTIN(__builtin_start_bitslice, "vc*c*", "")
+BUILTIN(__builtin_end_bitslice, "vc*", "")
 // Coroutine intrinsics.
 BUILTIN(__builtin_coro_resume, "vv*", "")
 BUILTIN(__builtin_coro_destroy, "vv*", "")
